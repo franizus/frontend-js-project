@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h1 class="display-4">Proyecto JS</h1>
+  <p class="lead">
+    Esta es una aplicacion web creada para gestionar las luces dentro de tu
+    hogar.
+  </p>
+  <hr class="my-4" />
+  <p>
+    Utiliza Angular como framework para el frontend y Sails para el backend.
+  </p>
+  <div class="d-flex justify-content-end mt-4">
+    <a
+      *ngIf="!isLogedin()"
+      class="btn btn-primary btn-lg"
+      routerLink="/login"
+      role="button"
+      >Login</a
+    >
+    <a
+      *ngIf="isLogedin()"
+      class="btn btn-primary btn-lg"
+      routerLink="/usuario-inicio"
+      role="button"
+      >Ver Casas</a
+    >
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container mt-5 mb-5">
+  <h3>Configurar Focos</h3>
+  <div *ngFor="let obj of leds" class="card mt-3" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">{{ 'Foco ' + (obj.idPlaca + 1) }}</h5>
+      <div class="card-text">
+        <form (submit)="guardarFoco(obj.idPlaca)">
+          <div class="form-group">
+            <label for="nombreLugar">Nombre Lugar</label>
+            <input
+              id="nombreLugar"
+              name="nombreLugar"
+              type="text"
+              class="form-control"
+              required
+              [disabled]="obj.guardado"
+              [(ngModel)]="obj.nombreLugar"
+            />
+          </div>
+          <input
+            type="hidden"
+            name="idPlaca"
+            id="idPlaca"
+            [(ngModel)]="obj.idPlaca"
+          />
+          <input
+            type="hidden"
+            name="idPlaca"
+            id="idPlaca"
+            [(ngModel)]="obj.estado"
+          />
+          <button [disabled]="obj.guardado" class="btn btn-primary mt-3">
+            Guardar
+          </button>
+        </form>
+      </div>
+      <div class="d-flex justify-content-end">
+        <button (click)="cambiarEstado(obj.idPlaca)" class="btn btn-warning">
+          Switch
+        </button>
+      </div>
+    </div>
+  </div>
+  <a routerLink="/usuario-inicio" class="btn btn-success mt-5">Regresar</a>
+</div>

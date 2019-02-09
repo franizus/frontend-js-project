@@ -1,0 +1,14 @@
+<div class="container mt-5 mb-5">
+  <h3>Controlar Focos - {{ casa.nombre }}</h3>
+  <div *ngFor="let led of leds" class="card mt-3" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">{{ led.nombreLugar }}</h5>
+      <div class="d-flex justify-content-end">
+        <button (click)="cambiarEstado(led.idPlaca)" class="btn btn-warning">
+          Switch
+        </button>
+      </div>
+    </div>
+  </div>
+  <a routerLink="/usuario-inicio" class="btn btn-success mt-5">Regresar</a>
+</div>

@@ -1,0 +1,28 @@
+<div class="container mt-5 mb-5">
+  <h3>Usuario - Inicio</h3>
+  <a routerLink="/crear-casa" class="btn btn-primary mt-4">Crear Casa</a>
+  <h4 class="mt-5 mb-4">Casas</h4>
+  <div *ngFor="let casa of casas" class="card mt-3" style="width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title">{{ casa.nombre }}</h5>
+      <p class="card-text">
+        {{ casa.descripcion }}
+      </p>
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-danger mr-3" (click)="borrarCasa(casa.id)">
+          Borrar
+        </button>
+        <a
+          routerLink="/controlar-casa/{{ casa.id }}"
+          class="btn btn-success text-white mr-3"
+          >Controlar Focos</a
+        >
+        <a
+          routerLink="/configurar-casa/{{ casa.id }}"
+          class="btn btn-primary text-white"
+          >Configurar</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
